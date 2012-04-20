@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Bibliotekveggen</title>
+<style>
+.book {
+  float: left;
+  padding: 5em;
+}
+</style>
+</head>
+<body>
+
+<h1>Bibliotekveggen</h1>
+
+[% FOREACH b IN books %]
+<div class="book">
+<div class="meta">
+  <span class="author">[% b.author %]</span>:
+  <span class="title">[% b.title %]</span>
+</div>
+<p class="img">
+<img src="cover.jpg" height="300" width="207" alt="Cover" />
+<a href="[% b.epub %]"><img src="[% b.epub_md5 %].png" alt="QR code" /></a>
+</p>
+</div>
+[% END %]
+
+</body>
+</html>
